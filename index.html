@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <style>
+    .navbar {
+        transition: opacity 0.3s;
+    }
+    .navbar.scrolled {
+        opacity: 0.3;
+    }
+    /* Adjusted animation for the toggle switch */
+    .toggle-dot {
+            transition: transform 0.3s ease;
+        }
+
+    /* Corrected translation value for the toggle dot */
+    .toggle-checkbox:checked + .toggle-label .toggle-dot {
+            transform: translateX(20px); /* Adjusted to match the correct position */
+        }
+    
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+  </style>
+</head>
+<body class="">
+    <title>Adum Setyankes</title>
+    <!-- navbar -->
+        <nav id="navbar" class="fixed top-0 w-full z-10 transition duration-300 bg-amber-400 text-white p-4 mx-1 rounded-xl">
+            <div class="container mx-auto flex items-center justify-between">
+                <div class="font-bold text-lg md:text-xl">
+                    Subag Adum
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:underline md:text-xl">Beranda</a>
+                    <a href="#layanan" class="hover:underline md:text-xl">Layanan</a>
+                    <a href="#aboutus" class="hover:underline md:text-xl">Tentang Kami</a>
+                    <a href="#hubungi" class="hover:underline md:text-xl">Hubungi Kami</a>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm md:text-xl">light</span>
+                        <input type="checkbox" id="theme-toggle" class="toggle-checkbox hidden">
+                        <label for="theme-toggle" class="toggle-label block w-10 h-6 rounded-full bg-gray-300 cursor-pointer relative">
+                            <span class="toggle-dot absolute w-4 h-4 bg-white rounded-full top-1 left-1 transition"></span>
+                        </label>
+                        <span class="text-sm md:text-xl">dark</span>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-amber-400 text-white p-4">
+                <a href="#home" class="block py-2 md:text-xl">Beranda</a>
+                <a href="#layanan" class="block py-2 md:text-xl">Layanan</a>
+                <a href="#aboutus" class="block py-2 md:text-xl">Tentang Kami</a>
+                <a href="#hubungi" class="block py-2 md:text-xl">Hubungi Kami</a>
+                <div class="flex items-center space-x-2 mt-4">
+                    <span class="text-sm md:text-xl">light</span>
+                    <input type="checkbox" id="mobile-theme-toggle" class="toggle-checkbox hidden">
+                    <label for="mobile-theme-toggle" class="toggle-label block w-10 h-6 rounded-full bg-gray-300 cursor-pointer relative">
+                        <span class="toggle-dot absolute w-4 h-4 bg-white rounded-full top-1 left-1 transition"></span>
+                    </label>
+                    <span class="text-sm md:text-xl">dark</span>
+                </div>
+            </div>
+        </nav>
+    <!-- navbar End -->
+    <!-- Hero Section -->
+    <section class="mx-7 mt-20 p-5" id="home">
+        <div class="md:flex md:mx-3 lg:mr-7">
+            <!-- Detai Nama -->
+            <div class="lg:ml-28">
+                <h3 class="text-slate-600 text-base font-semibold md:text-2xl">Hello !</h3>
+                <h1 class="text-teal-900 text-3xl font-semibold pb-3 md:text-5xl lg:text-8xl">Kami, <span class="bg-gradient-to-r from-amber-300 to-purple-600 text-transparent bg-clip-text font-bold text-3xl md:text-5xl lg:text-8xl">SUBBAG ADUM</span></h1>
+                <h2 class="text-xl text-slate-400 font-semibold pb-3 md:text-2xl lg:text-4xl md:mb-5">Setditjen Pelayanan Kesehatan</h2>
+                <a href="https://wa.link/348ckv" target="_blank" class="">
+                    <h3 class="bg-gradient-to-r from-amber-300 to-purple-600 w-28 text-center rounded-xl p-1 mb-4 text-slate-200 font-semibold transition transform hover:scale-105 hover:brightness-110 md:w-40 md:text-xl" id="hubungi">
+                        Contact Us
+                    </h3>
+                </a>              
+            </div>
+            <!-- Detai Nama End-->
+            <!-- Gambar -->
+             <div class=" flex justify-center p-4 md:p-6 border-2 border-dashed hover:border-dotted rounded-xl border-amber-500 md:mx-3 lg:ml-7">
+                <div class="rounded-xl h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 bg-cover" style="background-image: url(assets/kgtc.jpg)">
+                </div>
+             </div> 
+            <!-- Gambar End-->
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Divider -->
+     <section>
+        <span class="relative flex justify-center mt-5">
+            <div
+              class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"
+            ></div>
+          
+            <span class="text-sm md:text-base relative z-10 bg-white px-6 text-slate-500">Adum Setidtjen Yankes</span>
+        </span>
+     </section>
+    <!-- Divider End -->
+    <!-- Layanan -->
+     <section class="mx-5 mt-7 md:mx-10 lg:mx-14 border-2 p-5 rounded-md border-amber-300 bg-amber-50" id="layanan">
+        <div>
+            <div class="flex justify-center ">
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-amber-300 to-purple-600 text-transparent bg-clip-text md:text-3xl lg-text-4xl">LAYANAN ADUM</h1>
+            </div>
+            <div class="flex justify-center flex-wrap gap-5">
+                <div class="mt-10 md:w-80 lg:w-1/3">
+                    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                        <img
+                          alt="R Rapat"
+                          src="assets/rapat.png"
+                          class="h-56 w-full object-cover"
+                        />
+                      
+                        <div class="bg-white p-4 sm:p-6">
+                          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbC4j0lZl51lHSkN__pQxatGpUoyMDCPeWf8VYU-X4w_SMmA/viewform" target="_blank">
+                            <h3 class="text-center font-semibold mt-0.5 text-lg text-gray-900">Reservasi Ruang Rapat</h3>
+                          </a>
+                        </div>
+                      </article>
+                </div>
+                <div class="mt-10 md:w-80 lg:w-1/3">
+                    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                        <img
+                          alt="R Rapat"
+                          src="assets/pdln.png"
+                          class="h-56 w-full object-cover"
+                        />
+                      
+                        <div class="bg-white p-4 sm:p-6">
+                          <a href="https://adumyankes.github.io/pdln/" target="_blank">
+                            <h3 class="text-center font-semibold mt-0.5 text-lg text-gray-900">PDLN</h3>
+                          </a>
+                        </div>
+                      </article>
+                </div>
+                <div class="mt-10 md:w-80 lg:w-96">
+                    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                        <img
+                          alt="R Rapat"
+                          src="assets/drive.png"
+                          class="h-56 w-full object-cover"
+                        />
+                      
+                        <div class="bg-white p-4 sm:p-6">
+                          <a href="https://lynk.id/drive_adum" target="_blank">
+                            <h3 class="text-center font-semibold mt-0.5 text-lg text-gray-900">Drive Adum</h3>
+                          </a>
+                        </div>
+                      </article>
+                </div>
+                <div class="mt-10 md:w-80 lg:w-96">
+                    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                        <img
+                          alt="R Rapat"
+                          src="assets/realisasi.png"
+                          class="h-56 w-full object-cover"
+                        />
+                      
+                        <div class="bg-white p-4 sm:p-6">
+                          <a href="https://bit.ly/RealisasiAdum24" target="_blank">
+                            <h3 class="text-center font-semibold mt-0.5 text-lg text-gray-900">Realisasi Adum</h3>
+                          </a>
+                        </div>
+                      </article>
+                </div>
+                <div class="mt-10 md:w-80 lg:w-96">
+                    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                        <img
+                          alt="R Rapat"
+                          src="assets/kehadiran.png"
+                          class="h-56 w-full object-cover"
+                        />
+                      
+                        <div class="bg-white p-4 sm:p-6">
+                          <a href="https://docs.google.com/spreadsheets/d/1oXQVowRx0fPIbgPItpBj2BNajETIiGid/edit#gid=1732360089" target="_blank">
+                            <h3 class="text-center font-semibold mt-0.5 text-lg text-gray-900">Kehadiran Pegawai</h3>
+                          </a>
+                        </div>
+                      </article>
+                </div>
+                <div class="mt-10 md:w-80 lg:w-96">
+                    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                        <img
+                          alt="R Rapat"
+                          src="assets/perjadin.png"
+                          class="h-56 w-full object-cover"
+                        />
+                      
+                        <div class="bg-white p-4 sm:p-6">
+                          <a href="#">
+                            <h3 class="text-center font-semibold mt-0.5 text-lg text-gray-900">Laporan Perjadin</h3>
+                          </a>
+                        </div>
+                      </article>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Layanan Kami -->
+    <!-- Kepala Subagian  -->
+     <section class="mx-7 mt-10">
+        <div>
+            <a href="#" class="block">
+                <div>
+                    <div class=" w-60 sm:w-3/4 md:w-2/3 lg:w-1/3 mx-auto">
+                        <img
+                        alt=""
+                        src="assets/yustin.jpg"
+                        class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
+                      />
+                    </div>
+                  
+                    <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+                      <strong class="font-medium">Ni Nengah Yustina Tutuanita</strong>
+                  
+                      <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
+                  
+                      <p class="mt-0.5 opacity-50 sm:mt-0">Kepala Subbagian Administrasi Umum Setditjen Yankes</p>
+                    </div>
+                </div>
+              </a>
+        </div>
+     </section>
+    <!-- Kepala Subagian  End-->
+    <!-- Tentang Kami -->
+    <section class="mt-10 mx-7" id="aboutus">
+        <section class="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center">
+            <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+            <div class="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+                <h2 class="text-2xl font-bold md:text-3xl bg-gradient-to-r from-amber-300 to-purple-600 text-transparent bg-clip-text">
+                Tentang Kami
+                </h2>
+                <h2 class="mt-5 text-base font-semibold text-slate-600">
+                    Subagian Administrasi dan Umum Setditjen Yankes
+                </h2>
+                <p class="hidden text-gray-500 md:mt-4 md:block">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam
+                sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat
+                quisque ut interdum tincidunt duis.
+                </p>
+            </div>
+            </div>
+        
+            <img
+            alt=""
+            src="assets/baner.jpg"
+            class=" rounded-lg h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
+            />
+        </section>
+    </section>
+    <!-- Tentang Kami End-->
+    <!-- gallery kami -->
+     <section class="mx-5 mt-7 md:mx-10 lg:mx-14 border-2 p-5 rounded-md border-amber-300 bg-amber-50">
+        <div class="mx-auto md:h-1/3 md:w-1/2">
+            <div>
+                <h1 class="text-xl font-bold md-text-2xl lg:text-3xl text-center bg-gradient-to-r from-amber-300 to-purple-600 text-transparent bg-clip-text">GALERRY KAMI</h1>
+            </div>
+            <div class="mb-5">
+                <span class="relative flex justify-center mt-5">
+                    <div
+                      class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"
+                    ></div>
+                  
+                    <span class="text-sm md:text-base relative z-10 bg-amber-50 px-6 text-slate-500">Adum Setidtjen Yankes</span>
+                </span>
+            </div>
+            <div class="swiper mySwiper p-3">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/foto1.jpg" alt="Image 1" class="object-cover w-full h-full">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto4.jpg" alt="Image 2" class="object-cover w-full h-full">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto3.jpg" alt="Image 3" class="object-cover w-full h-full">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto11.jpg" alt="Image 3" class="object-cover w-full h-full">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto9.jpg" alt="Image 3" class="object-cover w-full h-full">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/gatau.jpg" alt="Image 3" class="object-cover w-full h-full">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/banner.jpg" alt="Image 3" class="object-cover w-full h-full">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto8.jpg" alt="Image 3" class="object-cover w-full h-full">
+                </div>
+            </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+     </section>
+    <!-- gallery kami End-->
+
+    <!-- Footers -->
+    <!-- Fotters -->
+     <section class="mx-2 mt-10">
+             <footer class="bg-amber-200">
+             <!-- Footers 1 -->
+              <div class="grid grid-cols-1 md:grid-cols-3">
+                 <!-- lorem diatas -->
+                 <div class="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+                         <p class="mt-6 max-w-md text-center leading-relaxed text-slate-700 sm:max-w-xs sm:text-left">
+                             JL. HR Rasuna Said Blok X5, Kav-4-9 Gedung Adhyatma Lt. 4 Ruang 406, Kementerian Kesehatan, DKI Jakarta
+                         </p>
+                         <ul class="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+                             <li>
+                             <a
+                                 href=""
+                                 rel="noreferrer"
+                                 target="_blank"
+                                 class="text-teal-700 transition hover:text-teal-700/75"
+                             >
+                                 <span class="sr-only">Facebook</span>
+                                 <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                 <path
+                                     fill-rule="evenodd"
+                                     d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                     clip-rule="evenodd"
+                                 />
+                                 </svg>
+                             </a>
+                             </li>
+                 
+                             <li>
+                             <a
+                                 href=""
+                                 rel="noreferrer"
+                                 target="_blank"
+                                 class="text-teal-700 transition hover:text-teal-700/75"
+                             >
+                                 <span class="sr-only">Instagram</span>
+                                 <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                 <path
+                                     fill-rule="evenodd"
+                                     d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                     clip-rule="evenodd"
+                                 />
+                                 </svg>
+                             </a>
+                             </li>
+                 
+                             <li>
+                             <a
+                                 href=""
+                                 rel="noreferrer"
+                                 target="_blank"
+                                 class="text-teal-700 transition hover:text-teal-700/75"
+                             >
+                                 <span class="sr-only">Twitter</span>
+                                 <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                 <path
+                                     d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                                 />
+                                 </svg>
+                             </a>
+                             </li>
+                         </ul>
+                 </div>
+                 <!-- lorem diatas end-->
+                 <!-- About Me -->
+                 <div class="text-center md:mt-20">
+                         <p class="text-lg font-medium text-slate-700">About Us</p>
+             
+                         <ul class="mt-3 space-y-4 text-sm">
+                         <li>
+                             <a class="text-slate-700 transition hover:text-teal-700" href="#">
+                             Contact Us
+                             </a>
+                         </li>
+             
+                         <li>
+                             <a class="text-slate-700 transition hover:text-teal-700" href="#">
+                             Layanan Kami
+                             </a>
+                         </li>
+             
+                         <li>
+                             <a class="text-slate-700 transition hover:text-teal-700" href="#">
+                             Our Gallery
+                             </a>
+                         </li>
+                         </ul>
+                 </div>
+                 <!-- About Me End-->
+                 <!-- My Friends  -->
+                 <div class="text-center mt-10 md:mt-20 ">
+                     <p class="text-lg font-medium text-slate-700">Our Member</p>
+         
+                     <ul class="mt-3 space-y-4 text-sm">
+                     <li>
+
+                     </li>
+                     </ul>
+                 </div>
+                 <!-- My Friends End -->
+             </div>
+             <!-- Footers 1 End -->
+ 
+             <!-- Footesr Bawah -->
+                 <div class="mt-12 border-t border-gray-600 pt-6 flex justify-center">
+                     <div class="text-center sm:flex sm:justify-between sm:text-left">
+                         <p class="text-sm text-slate-700 sm:order-first sm:mt-0">&copy; 2024 Subag Adum Setditjen Yankes</p>
+                     </div>
+                 </div>
+             <!-- Footesr Bawah End -->
+                 
+             </footer>
+     </section>
+     <!-- Fotters End-->
+    <!-- Footers End   -->
+
+
+
+
+
+    <!-- Script -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const body = document.body;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                navbar.classList.add('bg-opacity-50');
+            } else {
+                navbar.classList.remove('bg-opacity-50');
+            }
+        });
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('bg-gray-800');
+            body.classList.toggle('text-white');
+        });
+
+        mobileThemeToggle.addEventListener('click', () => {
+            body.classList.toggle('bg-gray-800');
+            body.classList.toggle('text-white');
+        });
+        
+        var swiper = new Swiper('.mySwiper', {
+        loop: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        },
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+    });
+    </script>
+    <!-- Script End -->
+</body>
+</html>
