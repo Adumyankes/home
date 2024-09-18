@@ -168,7 +168,7 @@
                         />
                       
                         <div class="bg-white p-4 sm:p-6">
-                          <a href="#">
+                          <a href="#" onclick="perjadin()" >
                             <h3 class="text-center font-semibold mt-0.5 text-lg text-gray-900">Pejalan Dinas</h3>
                           </a>
                         </div>
@@ -502,6 +502,14 @@
                 alert('password salah gess, dicoba lagi ya. kalo lupa coba tanya george');
             }
         }
+        function perjadin(){
+              const confirRealisasi = prompt('masukan kode akses:...');
+              if(confirRealisasi == 'adum405'){
+                  window.location.href = 'https://adumyankes.github.io/perjadin/';
+              }else{
+                  alert('password salah gess, dicoba lagi ya. kalo lupa coba tanya george');
+              }
+          }
     </script>
     <!-- Script End -->
 </body>
